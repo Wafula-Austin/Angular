@@ -1,22 +1,44 @@
-<h1>{{title | uppercase}}</h1>
-<br>
-<p>{{subtitle | lowercase}}</p>
-<br>
-<span>{{dateToday | date : 'dd/MM/yy'}}</span>
-<br>
-<p>{{money | number : '1.1-1'}}</p>
-<br>
-<p>{{_obj | json}}</p>
-<br>
-<p>{{money | percent}}</p>
-<br>
-<p>{{title | reverse}}</p>
-<br>
-<input type="checkbox" checked={{isDisabled}}>
-<input type="checkbox" [checked]="isDisabled">
-<!-- <input (keyup)="updateTitle($event)">-->
-<input>
-<br>
-<button (click) = "ChangeTitle()">Click here</button>
-<br>
+<h1>{{ title | uppercase }}</h1>
+<br />
+<p>{{ subtitle | lowercase }}</p>
+<br />
+<span>{{ dateToday | date : "dd/MM/yy" }}</span>
+<br />
+<p>{{ money | number : "1.1-1" }}</p>
+<br />
+<p>{{ _obj | json }}</p>
+<br />
+<p>{{ money | percent }}</p>
+<br />
+<p>{{ title | reverse }}</p>
+<br />
+<input type="checkbox" checked="{{ isDisabled }}" />
+<input type="checkbox" [checked]="isDisabled" />
+<!-- <input (keyup)="updateTitle($event)" -->
+<input />
+<br />
+<button (click)="ChangeTitle()">Click here</button>
+<br />
+<div class="mainDiv">
+  <div *ngIf="isActive">
+    <h3>Attribute directive</h3>
+  </div>
+</div>
 
+<div *ngFor="let item of customerInfo" [ngStyle]="{'background-color' : item.bg}">
+    <p>{{item.name | uppercase}}</p>
+    <p>City : {{item.city}}</p>
+</div>
+
+<div [ngSwitch]="_view">
+
+    <div *ngSwitchCase="'home'">
+        <h2>This is home view</h2>
+    </div>
+    <div *ngSwitchCase="'about'">
+        <h2>This is about view</h2>
+    </div>
+    <div *ngSwitchDefault="">
+        <h2>This is default view</h2>
+    </div>
+</div>

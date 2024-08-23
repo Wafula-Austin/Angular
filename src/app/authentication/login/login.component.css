@@ -1,0 +1,25 @@
+.main-card{
+    margin: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-header{
+    flex: auto;
+    justify-content: center;
+}
+.example-full-width {
+    width: 100%;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.mat-btn{
+    margin-right: 5%;
+}
+.example-form{
+    width: 100%;
+}

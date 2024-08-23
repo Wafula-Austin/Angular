@@ -5,19 +5,25 @@ import { CustomerComponent } from './common/customer/customer.component';
 import { AddComponent } from './common/add/add.component';
 import { StatusComponent } from './common/status/status.component';
 import { authGuard } from './Guard/auth.guard';
+import { childAuthGuard } from './Guard/child-auth.guard';
+import { authDeactivateGuard } from './Guard/auth-deactivate.guard';
+import { LoginComponent } from './authentication/login/login.component';
 
 export const routes: Routes = [
     {
-        path : '',
-        component : HomeComponent,canActivate:[authGuard],
+        path : 'login',
+        component : LoginComponent,
     },
     {
-        path : 'about',
-        component : AboutComponent,canActivate:[authGuard],
+        path : '',
+        component : HomeComponent,
+    },
+    {
+        path : 'about',loadComponent:()=>import('./about/about.component').then(load=>load.AboutComponent)
     },
     {
         path : 'customer',
-        component : CustomerComponent,canActivate:[authGuard],
+        component : CustomerComponent,canActivate:[authGuard],canActivateChild:[childAuthGuard],
         children : [
             {
                 path : 'add',

@@ -1,0 +1,12 @@
+.active {
+  background-color: cadetblue;
+}
+
+.inactive {
+  background-color: yellow;
+}
+.mainDiv {
+  background-color: green;
+  width: 100%;
+  height: 50;
+}
