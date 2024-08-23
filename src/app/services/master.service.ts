@@ -10,6 +10,6 @@ export class MasterService {
 
   constructor(private http:HttpClient) { }
   allowLogin(data : LoginModel){
-    return this.http.get<User[]>('https://localhost3000/user?id='+data.username+'&&password='+data.password);
+    return this.http.get<User[]>('https://localhost3000/user?id='+data.username+'&password='+data.password);
   }
 }
