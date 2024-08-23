@@ -1,0 +1,22 @@
+<h1>{{title | uppercase}}</h1>
+<br>
+<p>{{subtitle | lowercase}}</p>
+<br>
+<span>{{dateToday | date : 'dd/MM/yy'}}</span>
+<br>
+<p>{{money | number : '1.1-1'}}</p>
+<br>
+<p>{{_obj | json}}</p>
+<br>
+<p>{{money | percent}}</p>
+<br>
+<p>{{title | reverse}}</p>
+<br>
+<input type="checkbox" checked={{isDisabled}}>
+<input type="checkbox" [checked]="isDisabled">
+<!-- <input (keyup)="updateTitle($event)">-->
+<input>
+<br>
+<button (click) = "ChangeTitle()">Click here</button>
+<br>
+
